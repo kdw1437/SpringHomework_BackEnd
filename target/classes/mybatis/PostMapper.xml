@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.juro.study.mapper.PostMapper">
+    <resultMap id="postResultMap" type="com.juro.study.model.Post">
+        <id property="postId" column="post_id" />
+        <result property="title" column="title" />
+        <result property="content" column="content" />
+        <result property="author" column="author" />
+        <result property="createdDate" column="created_date" />
+        <result property="updatedDate" column="updated_date" />
+    </resultMap>
+
+    <select id="getAllPosts" resultMap="postResultMap">
+        SELECT * FROM (
+            SELECT a.*, ROWNUM rnum FROM (
+                SELECT * FROM posts ORDER BY created_date DESC
+            ) a WHERE ROWNUM &lt;= #{offset} + #{limit}
+        ) WHERE rnum > #{offset}
+    </select>
+
+    <select id="getPostById" resultMap="postResultMap">
+        SELECT * FROM posts WHERE post_id = #{id}
+    </select>
+
+    <insert id="insertPost" parameterType="com.juro.study.model.Post">
+        <selectKey keyProperty="postId" resultType="long" order="BEFORE">
+            SELECT post_seq.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO posts (post_id, title, content, author, created_date, updated_date)
+        VALUES (#{postId}, #{title}, #{content}, #{author}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+    </insert>
+
+    <update id="updatePost" parameterType="com.juro.study.model.Post">
+        UPDATE posts 
+        SET title = #{title}, 
+            content = #{content}, 
+            updated_date = CURRENT_TIMESTAMP
+        WHERE post_id = #{postId}
+    </update>
+
+    <delete id="deletePost">
+        DELETE FROM posts WHERE post_id = #{id}
+    </delete>
+
+    <select id="getTotalPostCount" resultType="int">
+        SELECT COUNT(*) FROM posts
+    </select>
+</mapper>

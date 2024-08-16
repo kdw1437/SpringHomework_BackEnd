@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{MM/dd HH:mm:ss.SSS} [%p] %c : %m%n"/>
+        </Console>
+        <RollingFile name="RollingFile" fileName="../../logs/oe/controller.log"
+                     filePattern="../../logs/oe/controller-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d{MM/dd HH:mm:ss.SSS} [%p] %c : %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.jurosys.openeyes.controller" level="info"/>
+        <Logger name="org.springframework" level="warn"/>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>
