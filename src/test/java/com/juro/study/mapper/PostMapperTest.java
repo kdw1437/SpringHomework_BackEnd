@@ -44,5 +44,5 @@ public class PostMapperTest {
 		return newPost;
 	}
 
-	// Other test methods...
+	// 다른 테스트 메서드...
 }

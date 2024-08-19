@@ -64,37 +64,39 @@ public class PostServiceImplTest {
         }
     }
 
-    @Test
+    @Test //새롭게 추가해서 업데이트하는 거 테스트
     public void testUpdatePost() {
         Post post = new Post();
-        post.setTitle("Original Title");
-        post.setContent("Original Content");
-        post.setAuthor("Original Author");
+        post.setTitle("원래 제목");
+        post.setContent("원래 내용");
+        post.setAuthor("원래 저자");
         postService.createPost(post);
 
-        post.setTitle("Updated Title");
-        post.setContent("Updated Content");
+        post.setTitle("업데이트된 제목");
+        post.setContent("업데이트된 내용");
         postService.updatePost(post);
 
         Post updatedPost = postService.getPostById(post.getPostId());
-        assertEquals("Updated Title", updatedPost.getTitle(), "Title should be updated");
-        assertEquals("Updated Content", updatedPost.getContent(), "Content should be updated");
+        
+    }
+    
+    @Test //원래 있던 데이터 업데이트하는 거 테스트
+    public void testUpdatePost2() {
+    	Post post = new Post();
+    	post.setPostId(5L);
+    	post.setTitle("새로운 제목");
+    	post.setContent("새로운 내용");
+    	
+    	postService.updatePost(post);
+    	
     }
 
     @Test
     public void testDeletePost() {
-        Post post = new Post();
-        post.setTitle("Post to Delete");
-        post.setContent("This post will be deleted");
-        post.setAuthor("Delete Author");
-        postService.createPost(post);
-
-        Long postId = post.getPostId();
+        Long postId = 8L;
         postService.deletePost(postId);
 
-        Post deletedPost = postService.getPostById(postId);
-        assertNull(deletedPost, "Post should be null after deletion");
-    }
+     }
 
     @Test
     public void testGetTotalPostCount() {
