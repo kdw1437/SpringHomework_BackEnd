@@ -42,12 +42,15 @@ scope와 systempath먼지 이해하도록 하기. pom.xml에서
 어떤 의미로 쓰는 건지 파악하도록 하기. (이거 꼭 하기)
 
 ojdbc8 빌드해서 넣는 방식도 다시 시연할 수 있도록 준비하기. (이거 까먹었는데 다시 찾아보고 준비하기)
+(이거 maven repository에서 다운받아서 사용) (jar파일 다운받을 필요 없이, maven repository에서 다운 받아서 사용 가능)
 
 빌드하는 방법 (eclipse써서 빌드) pom.xml로 빌드하기. 찾아보기. Goals랑 profiles머쓰는지 조사해오기.
-(이거 꼭 하기) (이거 함)(Goals에 clean package를 쓴다.)
+(이거 꼭 하기) (이거 함)(Goals에 clean package를 쓴다.) (해결)
 (profiles에는 pom.xml 파일의 profile 관련 내용이 있을 시, (환경 설정) profiles란에 써줌으로써 해당 사항을 활성화 시킬 수 있다.)
-java17로 왜 도는지 확인하도록 하기
-(이거 꼭 하기)
+java17로 왜 도는지 확인하도록 하기 
+(이거 꼭 하기) (해결)
+(Preferences > Java > Installed JREs 이거 jdk-17로 되어 있음) (이거 바꿨음)
+
 cmd로 하지 말고, eclipse로 빌드했을 때 왜 안돌아가는지 확인하기.
 
 cmd로 war파일 실행시킬거면, java -jar study.jar "argument"
@@ -59,9 +62,9 @@ GUI, CUI
 src/main/webapp이 파일 구조에서 없는 이유 위에는 아래에는 있는데 왜 없지?
 (이거 꼭 하기)
 url설정 찾아보도록 하기. url path에 파일 이름 들어가는지 안들어가는지 확인하도록 하기
-(웹 페이지 만들 때, 파일 이름이 들어가는 url은 없다.)
+(웹 페이지 만들 때, 파일 이름이 들어가는 url은 없다.) (ROOT.war로 해결)
 url path에 파일 이름이 들어가면 안된다. 
-(이거 꼭 하기)
+(이거 꼭 하기) (해결)
 다른 사람이 한 걸 보도록 하기. 의구심을 가지고 다른 사람이 한 걸 찾아보도록 하기.
 
 war 파일 실행시킬 때, tomcat을 실행시켰을 때, 찾아서 해보도록 하기. (tomcat을 war파일과 엮어서 실행하는 것)
@@ -81,6 +84,8 @@ window위에서 본인이 만든 소스코드가 톰캣위에서 실행되는 �
 결함 수정 하도록 하기.
 
 warfile이름이 url에 왜 들어가는지 찾아보도록 하기. url이름 구성되는 방식 조사하도록 하기 (이거 꼭 하기)
+(원래 war이름이 url에 들어간다. ROOT.war로 이름을 정해서 deploy하면, war파일 이름이 url에 안들어간다.)
+(해결)
 
 
 
