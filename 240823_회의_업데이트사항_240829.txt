@@ -32,6 +32,8 @@ war파일이나 jar파일은 상관이 없음
 
 scope provided의 정의 (알도록 하기) (scope 자체를 찾기) (이거 꼭하기)
 dependency가 war나 jar파일에는 들어가지 않는다.
+다른 외부 컨테이너에서 제공되는 API인 경우 provided로 지정시 마지막 패키징할 때 포함되지 않는다.
+
 
 maven dependenicse jar파일 위치 파악 
 
