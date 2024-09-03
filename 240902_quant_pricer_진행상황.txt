@@ -45,9 +45,8 @@ numOfAutoCall 크기의 String Array를 만든다. 그리고 toArray메소드를
 
 mapToDouble(Double::doubleValue): Double object를 primitive type double로 바꿔준다.
 
-
-
-
+DataSetUtil의 static method: getInitPrices()
+DataSetUtil의 getInitPrices 와 getInitPrice부터
 
 
 
