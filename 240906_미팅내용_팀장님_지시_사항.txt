@@ -1,0 +1,29 @@
+@PropertySource 세팅없이 자바 resources 폴더에 있으면, AppConfig가 자동으로 찾을 수 있다.
+(이거 보완에 오도록 하기) @PropertySoruce 세팅없이 자동으로 찾도록 하기.
+
+mapper xml에서 어떤 column을 가져오는지 모르기 때문에, xml에서 query 작성 시에
+모든 column을 다 써주도록 하기.
+
+query쓸 때, 한줄로 쓰지말고 분리해서 쓰도록 하기
+(띄어쓰기 하고 enter치면서 select *
+			from... 이런 식으로 쓰도록 하기)
+
+root level (logger 업데이트 하도록 하기) log 학습하도록 하기.
+
+goals에 들어갈 수 있는 내용 학습하도록 하기 (clean package 이외에)
+
+- 지향 주임 내용 -
+startDay and endDay는 error 처리를 해줘야 한다.
+startDay는 endDay보다 전에 있습니다. (error 처리를 해줘야 한다.) (error box 뜨도록 하기, validation 체크) < 엔터프라이스 시스템에서는 필수적이다.
+
+Digital Option (VBA)
+
+Ito-lemma 확률 미적분학
+
+closed form
+MC simulation
+
+<이거 할 줄 알면 ELS를 할 수 있다.
+
+<내가 다음주에 할일>
+@test 안되는 거 다시 한번 확인해보고, 이거 되도록 하기. quantpricer보고 (quantpricer 코드 분석 완벽하게 하기)
