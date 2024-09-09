@@ -1,0 +1,12 @@
+service issue 해결
+1. lombok.jar 다운로드
+2. lombok이 다운로드된 위치로 cmd에서 cd
+3. java -jar lombok.jar
+4. lombok installer가 자동으로 eclipse 설치 위치를 찾는다. 그리고 lombok 설치
+5. Eclipse를 재시작한다. (Eclipse를 닫고, 다시 시작)
+6. 현 project (ScriptApplication)을 오른쪽 마우스로 클릭
+7. Properties 선택
+8. Java Compiler > Annotation Processing
+9. Enable Project specific settings 하고 Enable annotation processing 체크
+10. Apply and Close
+11. Project (위쪽의 메뉴에서) > Clean (해당 ScriptApplication 선택해서 Clean)
